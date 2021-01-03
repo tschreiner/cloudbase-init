@@ -27,6 +27,7 @@ class CreateUserPlugin(createuser.BaseCreateUserPlugin):
         try:
             # Create a user profile in order for other plugins
             # to access the user home, etc.
+            # Bug in third argument, should not be true but a dot
             token = osutils.create_user_logon_session(user_name,
                                                       password,
                                                       True)
